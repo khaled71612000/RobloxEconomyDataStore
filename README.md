@@ -5,6 +5,9 @@ three things that actually prevent data loss in shipped games: **retries with ba
 atomic `UpdateAsync` writes, and session locking.** Drop-in, configurable, and
 documented so another developer can read it
 
+<img width="1023" height="649" alt="Screenshot_1" src="https://github.com/user-attachments/assets/ce7be97e-f2db-406a-b1f7-dd758d29deb8" />
+<img width="995" height="528" alt="1" src="https://github.com/user-attachments/assets/709af7d0-cdac-49d3-8a70-7e158b93ef57" />
+
 ---
 
 ## What it does
