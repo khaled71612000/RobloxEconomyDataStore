@@ -1,0 +1,39 @@
+{
+  "name": "RobloxEconomyDataStore",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "EconomyConfig": {
+        "$path": "src/ReplicatedStorage/EconomyConfig.lua"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "DataStoreManager": {
+        "$path": "src/ServerScriptService/DataStoreManager.lua"
+      },
+      "EconomyService": {
+        "$path": "src/ServerScriptService/EconomyService.lua"
+      },
+      "LeaderboardService": {
+        "$path": "src/ServerScriptService/LeaderboardService.lua"
+      },
+      "EconomyMain": {
+        "$path": "src/ServerScriptService/EconomyMain.server.lua"
+      },
+      "EconomyDemo": {
+        "$path": "src/ServerScriptService/EconomyDemo.server.lua"
+      },
+      "EconomyNetwork": {
+        "$path": "src/ServerScriptService/EconomyNetwork.server.lua"
+      }
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "EconomyClientUI": {
+        "$path": "src/StarterGui/EconomyClientUI.client.lua"
+      }
+    }
+  }
+}
