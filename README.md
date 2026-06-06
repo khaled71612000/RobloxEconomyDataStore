@@ -1,4 +1,4 @@
-# Persistent Economy System for Roblox — Currency, Inventory & Leaderboard
+# Persistent Economy System for Roblox  Currency, Inventory & Leaderboard
 
 A production-shaped player economy for Roblox, built on `DataStoreService` with the
 three things that actually prevent data loss in shipped games: **retries with backoff,
@@ -12,9 +12,9 @@ documented so another developer can read it
 
 ## What it does
 
-- **Multi-currency wallets** (Coins, Gems — add more in one line of config)
+- **Multi-currency wallets** (Coins, Gems  add more in one line of config)
 - **Inventory** with per-item stack caps and validation
-- **Atomic purchases** — spend currency *and* grant item, or neither (no "charged but got nothing" exploit)
+- **Atomic purchases**  spend currency *and* grant item, or neither (no "charged but got nothing" exploit)
 - **In-game leaderstats** (the player-list panel) kept in sync with saved data
 - **Global cross-server leaderboard** via `OrderedDataStore` (real top-N ranking)
 - **Crash- and shutdown-safe saving** via `BindToClose` and an autosave loop
@@ -47,7 +47,7 @@ change how data is stored, one place to change the economy rules.
 ### Prerequisite (required for any DataStore to work)
 In Studio: **Home → Game Settings → Security → enable "Enable Studio Access to API Services"**, and publish the place once (`File → Publish to Roblox`). DataStores only work in a published place.
 
-### Option A — Rojo (recommended)
+### Option A  Rojo (recommended)
 This repo ships a `default.project.json`.
 
 ```bash
@@ -56,18 +56,18 @@ rojo serve
 ```
 Then connect from the Rojo Studio plugin. Source files sync into the right services automatically.
 
-### Option B — Manual paste (no tooling)
+### Option B  Manual paste (no tooling)
 1. In Studio, create a **ModuleScript** named `EconomyConfig` in `ReplicatedStorage`, paste `src/ReplicatedStorage/EconomyConfig.lua`.
 2. In `ServerScriptService`, create **ModuleScripts** named `DataStoreManager`, `EconomyService`, `LeaderboardService` and paste the matching files.
 3. In `ServerScriptService`, create **Scripts** named `EconomyMain` and `EconomyDemo`, paste the `.server.lua` files.
 
-> Names matter — the modules find each other with `:WaitForChild("...")`, so the Instance names must match the filenames (without extensions).
+> Names matter  the modules find each other with `:WaitForChild("...")`, so the Instance names must match the filenames (without extensions).
 
 ### Verify it works
 With API access enabled, press **Play**. The Output window should print:
 
 ```
-[Economy] Server economy system online — store: PlayerEconomy_v1
+[Economy] Server economy system online  store: PlayerEconomy_v1
 [DEMO] profile loaded ... PASS
 ...
 [DEMO] All economy checks passed ✅
@@ -115,7 +115,7 @@ Existing players' saves are migrated forward automatically on next load (missing
 | Two reads race a write (lost update) | All writes use `UpdateAsync` (atomic read-modify-write), never `SetAsync` |
 | Same player loaded on two servers → duplication / rollback | Session lock stamped on load, verified on every save, released on leave; stale locks (dead servers) are stolen after `SESSION_LOCK_STALE_AFTER` |
 | Server shuts down before saving | `BindToClose` saves every loaded profile inside the shutdown window |
-| Load fails and we overwrite good data with defaults | On hard load failure the player is **kicked**, not given a blank profile — refusing to destroy data is better than silently losing it |
+| Load fails and we overwrite good data with defaults | On hard load failure the player is **kicked**, not given a blank profile  refusing to destroy data is better than silently losing it |
 
 ## License
 MIT
